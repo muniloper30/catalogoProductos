@@ -4,7 +4,7 @@ import vl.catalogoProductos.model.Producto;
 
 import java.util.List;
 
-public interface IProductoServico {
+public interface IProductoServicio {
 
     public List<Producto> listarProductos(); //Recuperamos todos los objetos de tipo Producto
 

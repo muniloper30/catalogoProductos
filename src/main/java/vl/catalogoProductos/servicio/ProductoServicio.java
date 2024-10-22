@@ -12,7 +12,7 @@ import java.util.List;
 
 
 
-public class ProductoServicio implements IProductoServico{
+public class ProductoServicio implements IProductoServicio {
 
 
     @Autowired //Al momento de ejecutar spring de manera automática va agregar una instancia de la clase repositorio
