@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">   <!--Etiqueta para usar etiquetas de thymeleaf -->
+<head th:replace="~{componentes/cabecero::cabecero-section(titulo='Agregar')}">
+    <meta charset="UTF-8">
+
+    <title>Agregar Producto</title>
+</head>
+<body>
+<!--Menú de navegación -->
+<div th:replace="~{componentes/navbar::navbar-section}"></div>
+
+<div class="container">
+    <div class="container text-center" style="margin:30px">
+        <h3>Agregar Producto al Catálogo</h3>
+    </div>
+    <div>
+        <form>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Producto</label>
+                <input type="text" class="form-control"
+                       id="nombre" name="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción del Producto</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion">
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio</label>
+                <input type="text" class="form-control" id="precio" name="precio" aria-activedescendant="precioHelp">
+                <div id="precioHelp" class="form-text">Por unidad</div>
+            </div>
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock</label>
+                <input type="text" class="form-control" id="stock" name="stock" aria-activedescendant="stockHelp">
+                <div id="stockHelp" class="form-text">Introduce la cantidad disponible</div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning btn-sm me-3">Agregar</button>
+                <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<div th:replace="~{componentes/footer::footer-section}"></div>
+
+</body>
+</html>
