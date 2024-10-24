@@ -29,4 +29,8 @@ public class ProductoControlador {
         return "index"; //index.html
     }
 
+    @GetMapping("/agregar")
+    public String mostrarAgregar(){
+        return "agregar"; //agregar.html
+    }
 }
