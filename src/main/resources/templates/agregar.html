@@ -14,11 +14,11 @@
         <h3>Agregar Producto al Catálogo</h3>
     </div>
     <div>
-        <form>
+        <form action="/agregar" modelAttribute="productoForm" method="post"> <!-- Agregamos el post para que procese el envió -->
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre del Producto</label>
                 <input type="text" class="form-control"
-                       id="nombre" name="nombre">
+                       id="nombre" name="nombre" required="true">
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción del Producto</label>
@@ -26,12 +26,12 @@
             </div>
             <div class="mb-3">
                 <label for="precio" class="form-label">Precio</label>
-                <input type="text" class="form-control" id="precio" name="precio" aria-activedescendant="precioHelp">
+                <input type="text" class="form-control" id="precio" name="precio" aria-activedescendant="precioHelp" required="true">
                 <div id="precioHelp" class="form-text">Por unidad</div>
             </div>
             <div class="mb-3">
                 <label for="stock" class="form-label">Stock</label>
-                <input type="text" class="form-control" id="stock" name="stock" aria-activedescendant="stockHelp">
+                <input type="text" class="form-control" id="stock" name="stock" aria-activedescendant="stockHelp" required="true">
                 <div id="stockHelp" class="form-text">Introduce la cantidad disponible</div>
             </div>
             <div class="text-center">
