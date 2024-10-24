@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import vl.catalogoProductos.model.Producto;
 import vl.catalogoProductos.servicio.ProductoServicio;
@@ -37,9 +38,19 @@ public class ProductoControlador {
     }
 
     @PostMapping("/agregar")
-    public String agregar(@ModelAttribute("contactForm") Producto producto){
+    public String agregar(@ModelAttribute("productForm") Producto producto){
         logger.info("Producto a agregar: " + producto);
         productoServicio.guardarProducto(producto);
         return "redirect:/"; //Redirigimos al controlador el path "/"
     }
+
+    @GetMapping("/editar/{id}")  //VAMOS A EDITAR EL PRODUCTO
+    public String mostrarEditar(@PathVariable(value = "id") int idProducto,
+                                ModelMap model){
+        Producto producto = productoServicio.buscarProductoPorId(idProducto);
+        logger.info("Producto a editar (mostrar): " + producto);
+        model.put("producto", producto);
+        return "editar"; //editar.html
+    }
+
 }
