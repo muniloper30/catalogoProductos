@@ -15,7 +15,7 @@
     </div>
     <div>
         <form action="/editar" th:object="${producto}" method="post"> <!-- Agregamos el post para que procese el envió -->
-            <input type="hidden" th:field="*{idContacto}"/>
+            <input type="hidden" th:field="*{idProducto}"/>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre del Producto</label>
                 <input type="text" class="form-control"
@@ -23,16 +23,16 @@
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción del Producto</label>
-                <input type="text" class="form-control" id="descripcion" name="descripcion" th:field="*{descripcion}>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" th:field="*{descripcion}">
             </div>
             <div class="mb-3">
                 <label for="precio" class="form-label">Precio</label>
-                <input type="text" class="form-control" id="precio" name="precio" required="true" th:field="*{precio} aria-activedescendant="precioHelp">
+                <input type="text" class="form-control" id="precio" name="precio" required="true" th:field="*{precio}" aria-activedescendant="precioHelp">
                 <div id="precioHelp" class="form-text">Por unidad</div>
             </div>
             <div class="mb-3">
                 <label for="stock" class="form-label">Stock</label>
-                <input type="text" class="form-control" id="stock" name="stock" required="true" th:field="*{stock} aria-activedescendant="stockHelp">
+                <input type="text" class="form-control" id="stock" name="stock" required="true" th:field="*{stock}" aria-activedescendant="stockHelp">
                 <div id="stockHelp" class="form-text">Nueva cantidad</div>
             </div>
             <div class="text-center">

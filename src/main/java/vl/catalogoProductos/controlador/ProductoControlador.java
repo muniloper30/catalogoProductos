@@ -53,4 +53,11 @@ public class ProductoControlador {
         return "editar"; //editar.html
     }
 
+    @PostMapping("/editar")
+    public String editar(@ModelAttribute("producto") Producto producto){
+        logger.info("Producto a editar: " + producto);
+        productoServicio.guardarProducto(producto);
+        return "redirect:/"; //Redirigimos al controlador el path "/"
+    }
+
 }
