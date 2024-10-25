@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">   <!--Etiqueta para usar etiquetas de thymeleaf -->
+<head th:replace="~{componentes/cabecero::cabecero-section(titulo='Agregar')}">
+    <meta charset="UTF-8">
+
+    <title>confirmar eliminar</title>
+<body>
+<div class="d-flex flex-column justify-content-center">
+    <h2 class="text-center">¿Estás seguro de que deseas eliminar este producto?</h2>
+    <p class="text-center">Esta acción no se puede deshacer.</p>
+    <div class="d-flex justify-content-center p-2">
+        <!-- Botón para confirmar eliminación -->
+        <form th:action="@{/eliminar/{id}(id=${idProducto})}" method="post">
+            <button type="submit" class="btn btn-danger me-2">Eliminar</button> <!-- Añadido espacio a la derecha -->
+        </form>
+        <!-- Botón para cancelar -->
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+    </div>
+
+</div>
+</body>
+</html>

@@ -60,14 +60,24 @@ public class ProductoControlador {
         return "redirect:/"; //Redirigimos al controlador el path "/"
     }
 
-    @GetMapping("/eliminar/{id}")  //VAMOS A ELIMINAR UN PRODUCTO DEL CATÁLOGO
-    public String eliminar(@PathVariable(value = "id") int idProducto,
-                                ModelMap model){
+    @GetMapping("/confirmarEliminar/{id}")
+    public String confirmarEliminar(@PathVariable("id") int idProducto, ModelMap model) {
+        model.addAttribute("idProducto", idProducto); // Pasa el ID del producto a la vista
+        return "confirmarEliminar"; // Nombre de la plantilla de confirmación
+    }
+
+
+
+    @PostMapping("/eliminar/{id}")  //VAMOS A ELIMINAR UN PRODUCTO DEL CATÁLOGO
+    public String eliminar(@PathVariable(value = "id") int idProducto){
         Producto producto = new Producto();
         producto.setIdProducto(idProducto);
         productoServicio.eliminarProducto(producto);
         logger.info("Producto a editar (mostrar): " + producto);
         return "redirect:/"; //Redirigimos al controlador el path "/"
     }
+
+
+
 
 }
