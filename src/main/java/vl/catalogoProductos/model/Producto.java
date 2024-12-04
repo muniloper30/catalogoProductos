@@ -25,4 +25,7 @@ public class Producto {
     private String descripcion;
     private Double precio;
     private Integer stock;
+
+    public void setIdProducto(int idProducto) {
+    }
 }
