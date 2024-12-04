@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">   <!--Etiqueta para usar etiquetas de thymeleaf -->
+
+<!--Header (componente) -->
 <head th:replace="~{componentes/cabecero::cabecero-section(titulo='Inicio')}">
     <meta charset="UTF-8">
 
     <title>Catalogo de Productos</title>
 </head>
 <body>
-<!--Menú de navegación -->
+<!--Menú de navegación (componente) -->
 <div th:replace="~{componentes/navbar::navbar-section}"></div>
 <!--Div para desplegar la tabla -->
 <div class="container">
@@ -48,7 +50,7 @@
         </table>
     </div>
 </div>
-
+<!--Footer (componente) -->
 <div th:replace="~{componentes/footer::footer-section}"></div>
 
 </body>
